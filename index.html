@@ -29,12 +29,12 @@
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
     L.marker([1.6205345308053696, -75.60398737750786])
-        .addTo(map).bindPopup("UNIVERSIDAD DE LA AMAZONIA");
+        .addTo(map).bindPopup("Universidad");
     L.marker([1.6150547636696522, -75.61385806647577], { color: '#3274A3' })
-        .addTo(map).bindPopup("ALCALDIA DE FLORENCIA");
-        L.circle([1.6150547636696522, -75.61385806647577], {
-        color: 'red',
-        fillColor: 'red',
+        .addTo(map).bindPopup("Alcaldia");
+    L.circle([1.6150547636696522, -75.61385806647577], {
+        color: '#56A02C',
+        fillColor: '#73D83A',
         fillOpacity: 0.5,
         radius: 500
     }).addTo(map);
@@ -44,20 +44,20 @@
         [1.6146988328455352, -75.61281300826892],
         [1.6154018343871483, -75.61303152094325]
     ], {
-        color: "#CB2B3E",
-        weight: 1,
-        fillColor: '#CB2B3E'
+        color: "red",
+        weight: 2,
+        fillColor: 'red'
     }).addTo(map);
-    
+
     L.marker([1.621486, -75.600130], { color: '#3274A3' },)
-        .addTo(map).bindPopup("MY HOUSE");
-        var pointA = new L.latLng(1.621486, -75.600130),
-        pointB = new L.latLng(1.6150547636696522, -75.61385806647577);
-       
-        var latlngs = [pointA, pointB];
+        .addTo(map).bindPopup("Donde Vivo");
+    var pointA = new L.latLng(1.621486, -75.600130),
+        pointB = new L.latLng(1.6205345308053696, -75.60398737750786);
+
+    var latlngs = [pointA, pointB];
     L.polyline(
         latlngs,
-        { color: 'blue' }
+        { color: 'red' }
     ).addTo(map).bindPopup('Rutas de mi casa a la Universidad de la Amazonia');
 </script>
 </body>
