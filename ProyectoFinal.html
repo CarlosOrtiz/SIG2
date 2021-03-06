@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/2.9.9/leaflet-search.min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/2.9.9/leaflet-search.min.js"></script>
+	<style>
+		#map {
+			width: 100%;
+			height: 600px;
+			box-shadow: 5px 5px 5px #888;
+		}
+
+		.info {
+			padding: 6px 8px;
+			font: 16px/18px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255, 255, 255, 0.8);
+			box-shadow: 0 0 15px black;
+			border-radius: 15px;
+		}
+
+		.info h2 {
+			margin: 0 0 5px;
+			color: rgb(22, 48, 119);
+		}
+	</style>
+</head>
+
+<body>
+	<div id="map"></div>
+	<script>
+		var openMaps = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="http://osm.org/copyright">&nbsp; OpenStreetMap</a>'
+				+ 'contributors', maxZoom: 18
+		});
+
+		var googleMaps = L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}', {
+			attribution: '&copy; <a href="google.com">&nbsp; OpenStreetMap</a>contributors', maxZoom: 18
+		});
+
+		let googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+			maxZoom: 18,
+			subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+		});
+
+		var barrio = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+			layers: 'barrio',
+			format: 'image/png',
+			transparent: true,
+			tiled: true,
+			attribution: "Barrio"
+		});
+
+		var bufferBarrioRiesgo = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+			layers: 'barrios_dentrodebufferriesgo',
+			format: 'image/png',
+			transparent: true,
+			tiled: true,
+			attribution: "Buffer Barrio Riesgo"
+		});
+
+		var bufferCurvasQuebrada = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+			layers: 'buffercurvasquebrada',
+			format: 'image/png',
+			transparent: true,
+			tiled: true,
+			attribution: "Buffer Curvas Quebrada"
+		});
+
+		var callePrincipal = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+			layers: 'calleprincipal',
+			format: 'image/png',
+			transparent: true,
+			tiled: true,
+			attribution: "Calle Principal"
+		});
+
+		var calleSecundaria = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+			layers: '	callesecundaria',
+			format: 'image/png',
+			transparent: true,
+			tiled: true,
+			attribution: "Calle Secundaria"
+		});
+
+		var fuenteHidrica = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+			layers: 'fuentehidrica',
+			format: 'image/png',
+			transparent: true,
+			tiled: true,
+			attribution: "Fuente Hidrica"
+		});
+
+		var manzana = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+			layers: 'manzana',
+			format: 'image/png',
+			transparent: true,
+			tiled: true,
+			attribution: "Manzana"
+		});
+
+		var limitemunicipal = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+			layers: 'limitemunicipal',
+			format: 'image/png',
+			transparent: true,
+			tiled: true,
+			attribution: "limitemunicipal"
+		});
+
+		var limitedepartamental = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+			layers: 'limitedepartamental',
+			format: 'image/png',
+			transparent: true,
+			tiled: true,
+			attribution: "limitedepartamental"
+		});
+
+		var zonaBoscosa = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+			layers: 'zonaboscosa',
+			format: 'image/png',
+			transparent: true,
+			tiled: true,
+			attribution: "Zona Boscosa"
+		});
+
+		var zonaInvasion = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+			layers: 'zonainvasion',
+			format: 'image/png',
+			transparent: true,
+			tiled: true,
+			attribution: "Zona Invasion"
+		});
+
+		var zonaRiesgo = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+			layers: 'zonariesgo',
+			format: 'image/png',
+			transparent: true,
+			tiled: true,
+			attribution: "Zona Riesgo"
+		});
+
+		var baseMaps = {
+			"GoogleSatelital": googleHybrid,
+			"Open Street Map": openMaps,
+			"Google Earth": googleMaps
+		};
+
+		var overlayMaps = {
+			"Barrio": barrio,
+			"Barrios Riesgo": bufferBarrioRiesgo,
+			"Curva Quevradas": bufferCurvasQuebrada,
+			"Calle Principal": callePrincipal,
+			"Calle Secundaria": calleSecundaria,
+			"Fuente Hidrica": fuenteHidrica,
+			"Zona Boscosa": zonaBoscosa,
+			"Zona Invasion": zonaInvasion,
+			"Zona Riesgo": zonaRiesgo,
+			"Manzana": manzana,
+			/*	"limitemunicipal": limitemunicipal,*/
+			"limitedepartamental": limitedepartamental
+		};
+
+		var map = L.map('map', {
+			center: [1.6202867, -75.6306709],
+			zoom: 15,
+			layers: [
+				openMaps,
+				barrio,
+				bufferBarrioRiesgo,
+				bufferCurvasQuebrada,
+				callePrincipal,
+				calleSecundaria,
+				fuenteHidrica,
+				zonaBoscosa,
+				zonaInvasion,
+				zonaRiesgo,
+				limitemunicipal,
+				limitedepartamental,
+				manzana,
+			],
+			scrollWheelZoom: true,
+
+		});
+
+		L.control.scale({
+			position: 'bottomleft',
+			imperial: false
+		}).addTo(map);
+
+		var title = L.control();
+		title.onAdd = function (map) {
+			var div = L.DomUtil.create('div', 'info');
+			div.innerHTML = '<h2>Parcial 5</h2>Carlos Ortiz';
+			return div;
+		};
+
+		var legend = L.control({ position: 'bottomright' });
+		legend.onAdd = function (map) {
+			var div = L.DomUtil.create('div', 'info legend');
+			div.innerHTML +=
+				'<img src="http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=earth:segmentos_Manzanas" alt="legend" width="101" height="60">';
+			return div;
+		};
+
+		title.addTo(map);
+
+		L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(map);
+
+		legend.addTo(map);
+		L.control.scale({
+			position: 'bottomright',
+			imperial: false
+		}).addTo(map);
+		// Buscador
+
+		var searchControl = new L.Control.Search({
+			layer: Manzana,
+			propertyName: 'name',
+			marker: false
+		});
+
+		searchControl.on('search:locationfound', function (e) {
+			e.layer.setStyle({ fillColor: '#3f0', color: '#0f0' });
+		})
+			.on('search:collapsed', function (e) {
+				ManzanasJS.eachLayer(function (layer) {
+					ManzanaJS.resetStyle(layer)
+				})
+			});
+		map.addControl(searchControl);
+	</script>
+</body>
+
+</html>
