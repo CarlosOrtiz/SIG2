@@ -9,7 +9,7 @@
 #### 2.En GeoServer cargar los Shapefile, con PostGIS y tener en cuenta las coordenadas geográficas 3116
 
 <p align="center">
-  <a target="blank"><img src="https://raw.githubusercontent.com/CarlosOrtiz9901/SIG2/develop/img/Coordenadas_Geograficas_3116.jpeg" width="320" alt="Logo" /></a>
+  <img src="https://raw.githubusercontent.com/CarlosOrtiz9901/SIG2/develop/img/Coordenadas_Geograficas_3116.jpeg" width="320" alt="Logo" />
 </p>
 
 #### 3. Abril el archivo ProyectoFinal.html
