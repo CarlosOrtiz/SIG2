@@ -36,7 +36,7 @@ CREATE EXTENSION postgis;
 ./psql.exe -d final_project -h localhost -U postgres -p5432 -f ZonaRiesgo.sql
 ./psql.exe -d final_project -h localhost -U postgres -p5432 -f Barrios_dentrodeBufferRiesgo.sql
 ./psql.exe -d final_project -h localhost -U postgres -p5432 -f ZonaBoscosa.sql
-./psql.exe -d final_project -h localhost -U postgres -p5432 -f Barrio.sql
+./psql.exe -d final_project -h localhost -U postgres -p5432 -f Barrio1.sql
 ./psql.exe -d final_project -h localhost -U postgres -p5432 -f CalleSecundaria.sql
 ./psql.exe -d final_project -h localhost -U postgres -p5432 -f CallePrincipal.sql
 ./psql.exe -d final_project -h localhost -U postgres -p5432 -f FuenteHidrica.sql
