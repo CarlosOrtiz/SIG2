@@ -40,5 +40,5 @@ ProyectoFinal.html
 ```
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/CarlosOrtiz9901/SIG2/develop/public/img/Coordenadas_Geograficas_3116.jpeg" width="1000" alt="vista" />
+  <img src="https://raw.githubusercontent.com/CarlosOrtiz9901/SIG2/develop/public/vista.png" width="1000" alt="vista" />
 </p>
