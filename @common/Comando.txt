@@ -5,7 +5,7 @@ GRANT ALL PRIVILEGES ON DATABASE final_project TO postgres;
 CREATE EXTENSION postgis;
 
 Estos pasos no son nesesarios:
-
+/*
 .\shp2pgsql.exe -s 4326 -I -W LATIN1 C:\Users\carlo\Datos\Shp\Etapas\Barrio.shp public.barrio>barrio.sql
 .\shp2pgsql.exe -s 4326 -I -W LATIN1 C:\Users\carlo\Datos\Shp\Etapas\Manzana.shp public.manzana>manzana.sql
 .\shp2pgsql.exe -s 4326 -I -W LATIN1 "C:\Users\carlo\Datos\Shp\Fuentes Hidricas\FuenteHidricas.shp" public.fuente_hidrica>fhidrica.sql
@@ -17,8 +17,8 @@ Estos pasos no son nesesarios:
 .\shp2pgsql.exe -s 4326 -I -W LATIN1 "C:\Users\carlo\Datos\Shp\Zonas Riesgo\ZonaRiesgo.shp" public.riesgo>riesgo.sql
 .\shp2pgsql.exe -s 4326 -I -W LATIN1 "C:\Users\carlo\Datos\Shp\Zonas Riesgo\Buffer_RiesgoCurvasQuebrada.shp" public.riesgo_curva>curva.sql
 .\shp2pgsql.exe -s 4326 -I -W LATIN1 "C:\Users\carlo\Datos\Shp\Zonas Riesgo\Barrios_dentrodeBufferRiesgo.shp" public.buffer_riesgo>br.sql
-
-.\shp2pgsql.exe -s 4326 -I -W LATIN1 "C:\Users\carlo\Documents\SIG 2\ProyectoFinal\Shp\\Buffer_RiesgosCurvasQuebrada" public.BufferCurvasQuebrada>Buffer_RiesgosCurvasQuebrada.sql
+.\shp2pgsql.exe -s 4326 -I -W LATIN1 "C:\Users\carlo\Documents\SIG 2\ProyectoFinal\barrioX2.shp" public.pbarrio>BarrioX.sql
+.\shp2pgsql.exe -s 4326 -I -W LATIN1 "C:\Users\carlo\Documents\SIG 2\ProyectoFinal\Shp\Buffer_RiesgosCurvasQuebrada" public.BufferCurvasQuebrada>Buffer_RiesgosCurvasQuebrada.sql
 .\shp2pgsql.exe -s 4326 -I -W LATIN1 "C:\Users\carlo\Documents\SIG 2\ProyectoFinal\Shp\\ZonaInvasion.shp" public.ZonaInvasion>ZonaInvasion.sql
 .\shp2pgsql.exe -s 4326 -I -W LATIN1 "C:\Users\carlo\Documents\SIG 2\ProyectoFinal\Shp\\ZonaRiesgo.shp" public.ZonaRiesgo>ZonaRiesgo.sql
 .\shp2pgsql.exe -s 4326 -I -W LATIN1 "C:\Users\carlo\Documents\SIG 2\ProyectoFinal\Shp\\Barrios_dentrodeBufferRiesgo.shp" public.Barrios_dentrodeBufferRiesgo>Barrios_dentrodeBufferRiesgo.sql
@@ -39,6 +39,7 @@ Estos pasos no son nesesarios:
 ./psql.exe -d final_project -h localhost -U postgres -p5432 -f Barrios_dentrodeBufferRiesgo.sql
 ./psql.exe -d final_project -h localhost -U postgres -p5432 -f ZonaBoscosa.sql
 ./psql.exe -d final_project -h localhost -U postgres -p5432 -f Barrio1.sql
+./psql.exe -d final_project -h localhost -U postgres -p5432 -f BarrioX.sql
 ./psql.exe -d final_project -h localhost -U postgres -p5432 -f CalleSecundaria.sql
 ./psql.exe -d final_project -h localhost -U postgres -p5432 -f CallePrincipal.sql
 ./psql.exe -d final_project -h localhost -U postgres -p5432 -f FuenteHidrica.sql
@@ -60,3 +61,4 @@ INSERT INTO rutas(id,geom,name) VALUES(8,ST_GeomFromText('LINESTRING(-74.0805130
 SELECT ST_Distance(ST_Transform('SRID=4326;POINT(-)'::gometry,3857), ST_Transform('SRID=4326;POINT()'::geomtry,3857));
 CREATE OR REPLACE VIEW view_paises AS(SELECT paises.name, paises.geom FROM paises WHERE ST_Intersects((SELECT rutas.geom FROM rutas WHERE rutas.name='Bogotβ To La Paz')paises.geom));
 SELECT  ciudades.ciudad, ciudades.geom FROM ciudades WHERE ST_Intersects ((SELECT paises.geom FROM paises WHERE paises.name='Brazil'), ciudades.geom);
+*/
