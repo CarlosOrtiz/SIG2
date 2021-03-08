@@ -13,12 +13,12 @@
                 <se:Graphic>
                   <!--Parametric SVG-->
                   <se:ExternalGraphic>
-                    <se:OnlineResource xlink:type="simple" xlink:href="https://www.flaticon.es/svg/vstatic/svg/2045/2045845.svg?token=exp=1615185070~hmac=531020f6ca0d28ad9d5eacd90f8f9076?fill=%23ff0000&amp;fill-opacity=1&amp;outline=%23232323&amp;outline-opacity=1&amp;outline-width=0"/>
+                    <se:OnlineResource xlink:type="simple" xlink:href="https://raw.githubusercontent.com/CarlosOrtiz9901/SIG2/ae6e98bbf3220f913d67d5c2876b3b55499451ed/public/img/ondas.svg?fill=%23ff0000&amp;fill-opacity=1&amp;outline=%23232323&amp;outline-opacity=1&amp;outline-width=0"/>
                     <se:Format>image/svg+xml</se:Format>
                   </se:ExternalGraphic>
                   <!--Plain SVG fallback, no parameters-->
                   <se:ExternalGraphic>
-                    <se:OnlineResource xlink:type="simple" xlink:href="https://www.flaticon.es/svg/vstatic/svg/2045/2045845.svg?token=exp=1615185070~hmac=531020f6ca0d28ad9d5eacd90f8f9076"/>
+                    <se:OnlineResource xlink:type="simple" xlink:href="https://raw.githubusercontent.com/CarlosOrtiz9901/SIG2/ae6e98bbf3220f913d67d5c2876b3b55499451ed/public/img/ondas.svg"/>
                     <se:Format>image/svg+xml</se:Format>
                   </se:ExternalGraphic>
                   <!--Well known marker fallback-->
