@@ -9,16 +9,7 @@
           <se:Name>Single symbol</se:Name>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:GraphicFill>
-                <se:Graphic>
-                  <se:Mark>
-                    <se:WellKnownName>brush://dense4</se:WellKnownName>
-                    <se:Fill>
-                      <se:SvgParameter name="fill">#faef85</se:SvgParameter>
-                    </se:Fill>
-                  </se:Mark>
-                </se:Graphic>
-              </se:GraphicFill>
+              <se:SvgParameter name="fill">#faef85</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#faef85</se:SvgParameter>

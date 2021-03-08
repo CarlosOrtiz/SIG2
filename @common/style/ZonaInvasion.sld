@@ -9,36 +9,7 @@
           <se:Name>Single symbol</se:Name>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:GraphicFill>
-                <se:Graphic>
-                  <se:Mark>
-                    <se:WellKnownName>circle</se:WellKnownName>
-                    <se:Fill>
-                      <se:SvgParameter name="fill">#f3a6b2</se:SvgParameter>
-                    </se:Fill>
-                    <se:Stroke>
-                      <se:SvgParameter name="stroke">#e41a1c</se:SvgParameter>
-                      <se:SvgParameter name="stroke-width">1</se:SvgParameter>
-                    </se:Stroke>
-                  </se:Mark>
-                  <se:Size>2</se:Size>
-                </se:Graphic>
-              </se:GraphicFill>
-            </se:Fill>
-            <se:VendorOption name="distance">9,9</se:VendorOption>
-          </se:PolygonSymbolizer>
-          <se:PolygonSymbolizer>
-            <se:Fill>
-              <se:GraphicFill>
-                <se:Graphic>
-                  <se:Mark>
-                    <se:WellKnownName>brush://dense1</se:WellKnownName>
-                    <se:Fill>
-                      <se:SvgParameter name="fill">#f3a6b2</se:SvgParameter>
-                    </se:Fill>
-                  </se:Mark>
-                </se:Graphic>
-              </se:GraphicFill>
+              <se:SvgParameter name="fill">#f3a6b2</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#000000</se:SvgParameter>

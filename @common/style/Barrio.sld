@@ -9,46 +9,14 @@
           <se:Name>Single symbol</se:Name>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:GraphicFill>
-                <se:Graphic>
-                  <se:Mark>
-                    <se:WellKnownName>brush://dense3</se:WellKnownName>
-                    <se:Fill>
-                      <se:SvgParameter name="fill">#d9bfeb</se:SvgParameter>
-                    </se:Fill>
-                  </se:Mark>
-                </se:Graphic>
-              </se:GraphicFill>
+              <se:SvgParameter name="fill">#d9bfeb</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#ac8cc2</se:SvgParameter>
+              <se:SvgParameter name="stroke">#b169e4</se:SvgParameter>
               <se:SvgParameter name="stroke-width">2</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
           </se:PolygonSymbolizer>
-        </se:Rule>
-        <se:Rule>
-          <se:TextSymbolizer>
-            <se:Label>
-              <ogc:PropertyName>nombre</ogc:PropertyName>
-            </se:Label>
-            <se:Font>
-              <se:SvgParameter name="font-family">MS Shell Dlg 2</se:SvgParameter>
-              <se:SvgParameter name="font-size">13</se:SvgParameter>
-            </se:Font>
-            <se:LabelPlacement>
-              <se:PointPlacement>
-                <se:AnchorPoint>
-                  <se:AnchorPointX>0</se:AnchorPointX>
-                  <se:AnchorPointY>0.5</se:AnchorPointY>
-                </se:AnchorPoint>
-              </se:PointPlacement>
-            </se:LabelPlacement>
-            <se:Fill>
-              <se:SvgParameter name="fill">#000000</se:SvgParameter>
-            </se:Fill>
-            <se:VendorOption name="maxDisplacement">1</se:VendorOption>
-          </se:TextSymbolizer>
         </se:Rule>
       </se:FeatureTypeStyle>
     </UserStyle>
