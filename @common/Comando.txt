@@ -4,6 +4,8 @@ GRANT ALL PRIVILEGES ON DATABASE final_project TO postgres;
 \c final_project;
 CREATE EXTENSION postgis;
 
+Estos pasos no son nesesarios:
+
 .\shp2pgsql.exe -s 4326 -I -W LATIN1 C:\Users\carlo\Datos\Shp\Etapas\Barrio.shp public.barrio>barrio.sql
 .\shp2pgsql.exe -s 4326 -I -W LATIN1 C:\Users\carlo\Datos\Shp\Etapas\Manzana.shp public.manzana>manzana.sql
 .\shp2pgsql.exe -s 4326 -I -W LATIN1 "C:\Users\carlo\Datos\Shp\Fuentes Hidricas\FuenteHidricas.shp" public.fuente_hidrica>fhidrica.sql
