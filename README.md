@@ -33,7 +33,7 @@ CREATE EXTENSION postgis;
   <img src="https://raw.githubusercontent.com/CarlosOrtiz9901/SIG2/develop/public/img/Coordenadas_Geograficas_3116.jpeg" width="700" alt="img" />
 </p>
 
-#### 4. Abril el archivo ProyectoFinal.html
+#### 4. Abrir el archivo ProyectoFinal.html
 
 ```bash
 ProyectoFinal.html

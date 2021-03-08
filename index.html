@@ -49,12 +49,11 @@
 
     const data = dataBarrio;
 
-    const getGeoserverLayer = (name, attribution, position) => (
+    const getGeoserverLayer = (name, attribution) => (
       L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
         layers: name,
         format: 'image/png',
         transparent: true,
-        position: position,
         attribution
       })
     )
@@ -68,17 +67,17 @@
       attribution: '&copy; <a href="google.com">&nbsp; OpenStreetMap</a>contributors', maxZoom: 18
     });
 
-    const gFuenteHidrica = getGeoserverLayer('final:fuentehidrica', 'Fuente Hidrica', 1)
-    const gBufferCurvasQuebrada = getGeoserverLayer('final:buffercurvasquebrada', 'Buf. Curvas Quebrada', 2)
-    const gCallePrincipal = getGeoserverLayer('final:calleprincipal', 'Vía Principal', 3)
-    const gCalleSecundaria = getGeoserverLayer('final:callesecundaria', 'Vía Secundaria', 4)
-    const gBufferBarrioRiesgo = getGeoserverLayer('final:barrios_dentrodebufferriesgo', 'Buf. Barrio Riesgo', 5)
-    const gZonaRiesgo = getGeoserverLayer('final:zonariesgo', 'Zona Riesgo', 6)
-    const gZonaInvasion = getGeoserverLayer('final:zonainvasion', 'Zona Invasión', 7)
-    const gZonaBoscosa = getGeoserverLayer('final:zonaboscosa', 'Zona Boscosa', 8)
-    const gBarrio = getGeoserverLayer('final:barrio', 'Barrio', 9)
-    const gManzana = getGeoserverLayer('final:manzana', 'Manzana', 10)
-    const gLimiteDepartamental = getGeoserverLayer('final:limitedepartamental', 'Lim Departamental', 11)
+    const gFuenteHidrica = getGeoserverLayer('final:fuentehidrica', 'Fuente Hidrica')
+    const gBufferCurvasQuebrada = getGeoserverLayer('final:buffercurvasquebrada', 'Buf. Curvas Quebrada')
+    const gCallePrincipal = getGeoserverLayer('final:calleprincipal', 'Vía Principal')
+    const gCalleSecundaria = getGeoserverLayer('final:callesecundaria', 'Vía Secundaria')
+    const gBufferBarrioRiesgo = getGeoserverLayer('final:barrios_dentrodebufferriesgo', 'Buf. Barrio Riesgo')
+    const gZonaRiesgo = getGeoserverLayer('final:zonariesgo', 'Zona Riesgo')
+    const gZonaInvasion = getGeoserverLayer('final:zonainvasion', 'Zona Invasión')
+    const gZonaBoscosa = getGeoserverLayer('final:zonaboscosa', 'Zona Boscosa')
+    const gBarrio = getGeoserverLayer('final:barrio', 'Barrio')
+    const gManzana = getGeoserverLayer('final:manzana', 'Manzana')
+    const gLimiteDepartamental = getGeoserverLayer('final:limitedepartamental', 'Lim Departamental')
 
     const baseMaps = {
       "Google Street": google_streets,
@@ -86,31 +85,31 @@
     }
 
     var overlayMaps = {
-      "<img src='./src/img/fh.png' height=20px, width=20px /> Fuente Hidrica": gFuenteHidrica,
-      "<img src='./src/img/calleP.png' height=20px, width=20px /> Calle Principal": gCallePrincipal,
-      "<img src='./src/img/calleS.png' height=20px, width=20px /> Calle Secundaria": gCalleSecundaria,
-      "<img src='./src/img/edificio.png' height=20px, width=20px /> Barrio Riesgo": gBufferBarrioRiesgo,
-      "<img src='./src/img/rio.png' height=20px, width=20px /> Zona Riesgo Quebrada": gBufferCurvasQuebrada,
-      "<img src='./src/img/riesgo.png' height=20px, width=20px /> Zona Riesgo": gZonaRiesgo,
-      "<img src='./src/img/inva.png' height=20px, width=20px /> Zona Invasión": gZonaInvasion,
-      "<img src='./src/img/bosque.png' height=20px, width=20px /> Zona Boscosa": gZonaBoscosa,
-      "<img src='./src/img/pueblo.png' height=20px, width=20px /> Barrio": gBarrio,
-      "<img src='./src/img/cuadra.png' height=20px, width=20px /> Manzana": gManzana,
-      "<img src='./src/img/mapa.png' height=20px, width=20px /> Lim Departamental:": gLimiteDepartamental
+      "<img src='./img/fh.png' height=20px, width=20px /> Fuente Hidrica": gFuenteHidrica,
+      "<img src='./img/calleP.png' height=20px, width=20px /> Calle Principal": gCallePrincipal,
+      "<img src='./img/calleS.png' height=20px, width=20px /> Calle Secundaria": gCalleSecundaria,
+      "<img src='./img/edificio.png' height=20px, width=20px /> Barrio Riesgo": gBufferBarrioRiesgo,
+      "<img src='./img/rio.png' height=20px, width=20px /> Zona Riesgo Quebrada": gBufferCurvasQuebrada,
+      "<img src='./img/riesgo.png' height=20px, width=20px /> Zona Riesgo": gZonaRiesgo,
+      "<img src='./img/inva.png' height=20px, width=20px /> Zona Invasión": gZonaInvasion,
+      "<img src='./img/bosque.png' height=20px, width=20px /> Zona Boscosa": gZonaBoscosa,
+      "<img src='./img/pueblo.png' height=20px, width=20px /> Barrio": gBarrio,
+      "<img src='./img/cuadra.png' height=20px, width=20px /> Manzana": gManzana,
+      "<img src='./img/mapa.png' height=20px, width=20px /> Lim Departamental:": gLimiteDepartamental
     };
 
     var overlayMapsVr2 = {
-      "<img src='./src/img/fh.png' height=20px, width=20px /> Fuente Hidrica": gFuenteHidrica,
-      "<img src='./src/img/calleP.png' height=20px, width=20px /> Calle Principal": gCallePrincipal,
-      "<img src='./src/img/calleS.png' height=20px, width=20px /> Calle Secundaria": gCalleSecundaria,
-      "<img src='./public/barrioriesgo.png' height=20px, width=20px /> Barrio Riesgo": gBufferBarrioRiesgo,
-      "<img src='./public/curvas.png' height=20px, width=20px /> Zona Riesgo Quebrada": gBufferCurvasQuebrada,
-      "<img src='./public/zonariesgo.png' height=20px, width=20px /> Zona Riesgo": gZonaRiesgo,
-      "<img src='./public/zonainvadora.png' height=20px, width=20px /> Zona Invasión": gZonaInvasion,
-      "<img src='./public/zonaboscosa.png' height=20px, width=20px /> Zona Boscosa": gZonaBoscosa,
-      "<img src='./public/barrio.png' height=20px, width=20px /> Barrio": gBarrio,
-      "<img src='./public/manzana.png' height=20px, width=20px /> Manzana": gManzana,
-      "<img src='./src/img/mapa.png' height=20px, width=20px /> Lim Departamental": gLimiteDepartamental
+      "<img src='../public/manzana.png' height=20px, width=20px /> Manzana": gManzana,
+      "<img src='../public/barrio.png' height=20px, width=20px /> Barrio": gBarrio,
+      "<img src='./img/calleP.png' height=20px, width=20px /> Calle Principal": gCallePrincipal,
+      "<img src='./img/calleS.png' height=20px, width=20px /> Calle Secundaria": gCalleSecundaria,
+      "<img src='../public/zonariesgo.png' height=20px, width=20px /> Zona Riesgo": gZonaRiesgo,
+      "<img src='../public/zonaboscosa.png' height=20px, width=20px /> Zona Boscosa": gZonaBoscosa,
+      "<img src='../public/zonainvadora.png' height=20px, width=20px /> Zona Invasión": gZonaInvasion,
+      "<img src='../public/barrioriesgo.png' height=20px, width=20px /> Barrio Riesgo": gBufferBarrioRiesgo,
+      "<img src='../public/curvas.png' height=20px, width=20px /> Zona Riesgo Quebrada": gBufferCurvasQuebrada,
+      "<img src='./img/fh.png' height=20px, width=20px /> Fuente Hidrica": gFuenteHidrica,
+      "<img src='./img/mapa.png' height=20px, width=20px /> Lim Departamental": gLimiteDepartamental,
     };
 
     var map = L.map('map', {
@@ -121,14 +120,14 @@
         gFuenteHidrica,
         gCallePrincipal,
         gCalleSecundaria,
-        gBufferCurvasQuebrada,
-        gBufferBarrioRiesgo,
         gZonaRiesgo,
         gZonaInvasion,
         gZonaBoscosa,
-        gBarrio,
         gManzana,
-        gLimiteDepartamental
+        gLimiteDepartamental,
+        gBufferCurvasQuebrada,
+        gBufferBarrioRiesgo,
+        gBarrio
       ],
       scrollWheelZoom: true,
 
@@ -171,7 +170,7 @@
     function BarrioHover(e) {
       var layer = e.target;
       layer.setStyle({
-        fillColor: '#FF5733',
+        fillColor: '#DAF7A6',
         weight: 2,
         color: '#000000',
         dashArray: '',
@@ -215,7 +214,7 @@
     });
 
     searchControl.on('search:locationfound', function (e) {
-      e.layer.setStyle({ fillColor: '#3f0', color: '#FF5733' });
+      e.layer.setStyle({ fillColor: '', color: '#FF5733' });
       if (e.layer._popup)
         e.layer.openPopup();
     }).on('search:collapsed', function (e) {
