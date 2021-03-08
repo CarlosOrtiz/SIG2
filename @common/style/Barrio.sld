@@ -9,10 +9,10 @@
           <se:Name>Single symbol</se:Name>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#d9bfeb</se:SvgParameter>
+              <se:SvgParameter name="fill">#C1BCBC</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#b169e4</se:SvgParameter>
+              <se:SvgParameter name="stroke">#5D5757</se:SvgParameter>
               <se:SvgParameter name="stroke-width">2</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
@@ -26,8 +26,8 @@
               </ogc:Function>
             </se:Label>
             <se:Font>
-              <se:SvgParameter name="font-family">MS Shell Dlg 2</se:SvgParameter>
-              <se:SvgParameter name="font-size">15</se:SvgParameter>
+              <se:SvgParameter name="font-family">Arial</se:SvgParameter>
+              <se:SvgParameter name="font-size">14</se:SvgParameter>
               <se:SvgParameter name="font-weight">bold</se:SvgParameter>
             </se:Font>
             <se:LabelPlacement>
@@ -39,7 +39,7 @@
               </se:PointPlacement>
             </se:LabelPlacement>
             <se:Fill>
-              <se:SvgParameter name="fill">#ffffff</se:SvgParameter>
+              <se:SvgParameter name="fill">#00000</se:SvgParameter>
             </se:Fill>
             <se:VendorOption name="maxDisplacement">1</se:VendorOption>
           </se:TextSymbolizer>
